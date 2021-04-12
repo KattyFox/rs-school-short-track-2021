@@ -28,7 +28,7 @@ function getDNSStats(domains) {
 
     const sub = result;
 
-    const stringed = '.$ { String(arr[0]) }';
+    const stringed = `.${String(arr[0])}`;
     if (sub[stringed]) {
       sub[stringed]++;
     } else {
@@ -37,7 +37,7 @@ function getDNSStats(domains) {
 
     let acumulated = stringed;
     for (let j = 1; j < arr.length; j++) {
-      acumulated += '.$ { String(arr[j]) }';
+      acumulated += `.${String(arr[j])}`;
 
       if (sub[acumulated]) {
         sub[acumulated]++;
